@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>E-Portafolio PASEC | Ciudadanía Responsable</title>
+  <!-- Google Fonts & Font Awesome for Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f7fc;
+      color: #1e2a3e;
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 32px;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      padding: 2rem 2rem 3rem;
+    }
+
+    /* header */
+    .hero {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      border-bottom: 3px solid #2c7da0;
+      padding-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #1f6e8c, #0e4e6b);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.3px;
+    }
+    .hero p {
+      color: #2c3e50;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      background: #e9f0f5;
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+    }
+
+    /* secciones */
+    section {
+      margin-bottom: 3rem;
+      scroll-margin-top: 1rem;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      border-left: 6px solid #2c7da0;
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+      color: #0b3b4f;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.05);
+      padding: 1.5rem;
+      margin-bottom: 1.8rem;
+      border: 1px solid #e2edf2;
+      transition: 0.2s;
+    }
+    .card h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #1f5e7a;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .badge-placeholder {
+      background: #f0f4f9;
+      border-left: 4px solid #61a5c2;
+      padding: 1rem;
+      border-radius: 18px;
+      font-style: normal;
+      color: #2c3e50;
+    }
+    .product-image {
+      background: #eef2f5;
+      border-radius: 20px;
+      padding: 1.2rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-weight: 500;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    th, td {
+      border: 1px solid #cbdde6;
+      padding: 0.9rem;
+      vertical-align: top;
+      background-color: white;
+    }
+    th {
+      background: #e5f0f6;
+      font-weight: 600;
+      color: #1a5a77;
+    }
+    .table-responsive {
+      overflow-x: auto;
+    }
+    .commitment-actions ul {
+      margin-left: 1.2rem;
+      padding-left: 0;
+    }
+    .commitment-actions li {
+      margin-bottom: 0.4rem;
+    }
+    .video-placeholder {
+      background: #eef2fa;
+      border-radius: 24px;
+      padding: 1.5rem;
+      text-align: center;
+      border: 2px dashed #7fafc4;
+      margin-bottom: 1.2rem;
+    }
+    .fake-video {
+      background: #cbdde6;
+      border-radius: 20px;
+      padding: 2rem;
+      color: #1e4660;
+      font-weight: 500;
+    }
+    .info-tag {
+      display: inline-block;
+      background: #2c7da0;
+      color: white;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+    }
+    hr {
+      margin: 1rem 0;
+      border-color: #d4e2ea;
+    }
+    .placeholder-text {
+      color: #2c3e50;
+      background: #fbfefc;
+    }
+    i, .icon-em {
+      color: #2c7da0;
+      margin-right: 6px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      color: #6c8b9e;
+      font-size: 0.85rem;
+      border-top: 1px solid #dce7ef;
+      padding-top: 1.5rem;
+    }
+    @media (max-width: 700px) {
+      .container {
+        padding: 1.5rem;
+      }
+      th, td {
+        padding: 0.6rem;
+        font-size: 0.85rem;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="hero">
+    <h1><i class="fas fa-leaf"></i> E-Portafolio: Ciudadanía Responsable</h1>
+    <p>Reflexión integrada | Servicio comunitario y PASEC</p>
+  </div>
+
+  <!-- ================= SECCIÓN 1: PRODUCTO MEJORADO ================= -->
+  <section>
+    <div class="section-title"><i class="fas fa-star"></i> 1. Producto mejorado & aprendizaje clave</div>
+    <div class="card">
+      <h3><i class="fas fa-file-alt"></i> Producto destacado: "Guía de participación ciudadana desde el aula" (versión mejorada)</h3>
+      <div class="product-image">
+        <i class="fas fa-chalkboard-user fa-2x"></i> 
+        <span>📘 Documento reflexivo + infografía de roles ciudadanos</span>
+      </div>
+      <div class="badge-placeholder">
+        <p><strong>🔍 Explicación (aprox. 330 palabras):</strong></p>
+        <p>¿Qué aprendí? A través de la mejora de este producto (un análisis de casos sobre dilemas éticos en el servicio comunitario), comprendí que la ciudadanía responsable trasciende la simple participación: implica una escucha activa, empatía estructural y acciones sostenibles. Aprendí a vincular conceptos de PASEC como "bien común" y "justicia social" con situaciones reales detectadas durante mis horas de voluntariado.</p>
+        <p>¿Por qué fue relevante? Porque inicialmente concebía el servicio como una ayuda puntual; sin embargo, al profundizar en el producto, descubrí que la transformación social requiere planificación colectiva y corresponsabilidad. Entendí que mi rol como ciudadano incluye identificar necesidades genuinas de la comunidad y no imponer soluciones externas. Este aprendizaje me hizo valorar el diálogo horizontal con organizaciones de base.</p>
+        <p>Impacto personal: Rompió mi creencia previa de que "los jóvenes no influyen en problemas estructurales". Ahora reconozco que pequeñas acciones sostenidas generan cambios. Profesionalmente, como futuro [tu profesión], revisé mi deber ético: no se trata solo de eficiencia técnica, sino de construir confianza y equidad. Este producto mejorado simboliza mi evolución de una mirada asistencialista a una mirada de agencia ciudadana.</p>
+        <p><em>(Este texto es un placeholder. Reemplázalo con tu producto real y tu reflexión personal de 300-350 palabras).</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 2: CIUDADANÍA RESPONSABLE ================= -->
+  <section>
+    <div class="section-title"><i class="fas fa-hand-sparkles"></i> 2. Reflexión sobre ciudadanía responsable</div>
+    <div class="card">
+      <h3><i class="fas fa-gavel"></i> Mi deber sobre ciudadanía responsable</h3>
+      <p>Considero que mi deber como ciudadano responsable es involucrarme activamente en los espacios comunitarios, informarme críticamente, respetar los derechos humanos y contribuir a la solución de problemas colectivos, priorizando el bienestar sobre intereses individuales. Además, implica exigir cuentas a las instituciones y asumir compromisos sostenibles con mi entorno.</p>
+    </div>
+    <div class="card">
+      <h3><i class="fas fa-pen-fancy"></i> Primera definición (original - extraída de mi deber inicial)</h3>
+      <p>"Ciudadanía responsable es cumplir con obligaciones legales, votar, respetar las normas y, ocasionalmente, realizar voluntariado para ayudar a quienes más lo necesitan, todo dentro del marco del respeto mutuo."</p>
+    </div>
+    <div class="card">
+      <h3><i class="fas fa-seedling"></i> Segunda definición (actual - basada en PASEC + servicio)</h3>
+      <p>"Ciudadanía responsable es un ejercicio activo, crítico y corresponsable mediante el cual las personas participan en la construcción de tejido social, reconocen la interdependencia con diversos grupos (niños, ancianos, medio ambiente, etc.) y transforman realidades desde la empatía ética, comprometiéndose no solo en acciones puntuales sino en procesos sostenidos de incidencia colectiva y cuidado mutuo."</p>
+    </div>
+    <div class="card">
+      <h3><i class="fas fa-code-branch"></i> Comparación (primer definición vs. segunda) ~ 340 palabras</h3>
+      <div class="placeholder-text">
+        <p>La comparación evidencia cambios sustanciales. En mi primera definición, la ciudadanía responsable se limitaba al cumplimiento de deberes formales (votar, leyes) y una ayuda ocasional, con un enfoque casi individual. Mi segunda definición, en cambio, integra la corresponsabilidad, la transformación estructural y la participación continua. ¿Qué cambió? Principalmente la noción de «interdependencia» y «procesos». Antes entendía el servicio como una actividad extracurricular; ahora lo veo como un eje ético de mi vida profesional y personal. Este giro ocurrió gracias a las horas de servicio con [organización placeholder] al interactuar con adultos mayores, lo que me mostró que la vulnerabilidad no es una carencia aislada, sino resultado de desigualdades sistémicas.</p>
+        <p>También cambió la dimensión política: ya no concibo la ciudadanía como una actitud pasiva, sino como agencia transformadora. Lo que se mantuvo es el valor del respeto y la legalidad, pero ahora enriquecido con justicia social. Se mantuvo la convicción de que toda persona debe aportar, pero la escala se amplió: de lo individual a lo colectivo. El porqué del cambio radica en las experiencias directas durante el servicio: escuchar historias de exclusión, ver cómo pequeñas acciones organizadas generan redes de apoyo, y las clases de PASEC donde discutimos dilemas éticos. Así, mi definición evolucionó de una visión funcionalista a una relacional y comprometida con la equidad.</p>
+        <p><em>(Placeholder. Personaliza según tu propio proceso reflexivo).</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 3: TRES VALORES ESENCIALES ================= -->
+  <section>
+    <div class="section-title"><i class="fas fa-heart"></i> 3. Valores que guían mi acción ciudadana</div>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr><th>Valor</th><th>¿Por qué es importante en tu accionar ciudadano?</th><th>¿Lo aplicaste durante tus horas de servicio? ¿cómo?<br> (si no, ¿cómo te diste cuenta de su importancia?)</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Empatía activa</strong></td>
+            <td>Permite comprender necesidades ajenas sin prejuicios, y actuar desde la escucha profunda. Es clave para evitar intervenciones paternalistas.</td>
+            <td>Sí, durante mi servicio en [comedor comunitario / grupo de niños]. Practicaba la empatía adaptando mis explicaciones a sus contextos y validando sus emociones. Por ejemplo, al ayudar con tareas escolares, preguntaba primero cómo se sentían, en lugar de imponer métodos.</td>
+          </tr>
+          <tr>
+            <td><strong>Responsabilidad colectiva</strong></td>
+            <td>Reconozco que los problemas comunitarios nos afectan a todos; mi accionar debe considerar el impacto en otros y en el entorno.</td>
+            <td>La apliqué coordinando limpieza de espacios verdes. Me di cuenta de que delegar tareas y asumir compromisos en equipo fortalecía los resultados. Cuando no aplicaba este valor, el trabajo era fragmentado; el aprendizaje fue esencial.</td>
+          </tr>
+          <tr>
+            <td><strong>Integridad / Coherencia</strong></td>
+            <td>Actuar con honestidad y congruencia entre discurso y práctica. Genera confianza en los espacios sociales y profesionales.</td>
+            <td>Sí, en la organización [nombre placeholder] me comprometí a llegar puntualmente y cumplir las actividades pactadas. Eso generó respeto con el staff. En un momento donde sugerí cambios, lo hice con transparencia y basado en evidencias, reforzando la confianza.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 4: COMPROMISOS PERSONALES ================= -->
+  <section>
+    <div class="section-title"><i class="fas fa-clipboard-list"></i> 4. Compromisos como estudiante y futuro profesional</div>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr><th>Compromisos</th><th>Indicadores (¿cómo evaluar su cumplimiento?)</th><th>Acciones concretas (mínimo 4 por compromiso)</th></tr>
+        </thead>
+        <tbody>
+          <tr style="background:#fafdff;">
+            <td><strong>Como estudiante:</strong> Integrar los aprendizajes del servicio comunitario en mi vida académica, promoviendo proyectos con enfoque de responsabilidad social.</td>
+            <td>✅ Participar en al menos 2 iniciativas de extensión universitaria por semestre.<br>✅ Incluir reflexiones sobre ciudadanía en trabajos de curso.<br>✅ Evaluación positiva de compañeros en acciones colaborativas.</td>
+            <td class="commitment-actions">
+              <ul>
+                <li>1. Organizar una jornada de diálogo sobre voluntariado en mi facultad.</li>
+                <li>2. Vincular el contenido de al menos una materia con casos reales de la organización donde serví.</li>
+                <li>3. Crear un grupo de estudio sobre ética y participación ciudadana.</li>
+                <li>4. Documentar mis aprendizajes mediante un blog o diario digital cada dos meses.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Como futuro profesional:</strong> Ejercer mi profesión con sensibilidad social, priorizando el bien común y la sostenibilidad en cada decisión técnica/administrativa.</td>
+            <td>✅ Diseñar o aportar en proyectos que atiendan necesidades de grupos vulnerables en mi ámbito laboral.<br>✅ Recibir retroalimentación positiva de usuarios o comunidad.<br>✅ Participar en al menos un voluntariado profesional al año.</td>
+            <td class="commitment-actions">
+              <ul>
+                <li>1. Proponer en mi futuro trabajo una política de vinculación comunitaria anual.</li>
+                <li>2. Realizar diagnósticos participativos antes de implementar soluciones profesionales.</li>
+                <li>3. Capacitarme en enfoque de derechos humanos y justicia social (cursos/certificaciones).</li>
+                <li>4. Colaborar con organizaciones sin fines de lucro usando mis habilidades técnicas (asesoría gratuita).</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="badge-placeholder" style="margin-top: 0.5rem;"><i class="fas fa-info-circle"></i> Los compromisos deberán ser evaluados periódicamente según los indicadores propuestos. (Placeholder - ajusta según tu realidad).</p>
+  </section>
+
+  <!-- ================= SECCIÓN 5: VIDEO CARTA (storytelling + youtube) ================= -->
+  <section>
+    <div class="section-title"><i class="fas fa-video"></i> 5. Video carta: mí mismo dentro de 10 años</div>
+    <div class="card">
+      <h3><i class="fas fa-user-astronaut"></i> Datos de identificación</h3>
+      <p><span class="info-tag">Nombre completo</span> [María José López Ramírez] (placeholder)</p>
+      <p><span class="info-tag">Carrera</span> [Psicología / Administración / Ingeniería - escribir tu carrera] <span class="info-tag">Semestre</span> [4to semestre]</p>
+      <p><span class="info-tag">Organización</span> Fundación Semillas Comunitarias <span class="info-tag">Grupo/entidad</span> Niños y adolescentes en situación de vulnerabilidad</p>
+    </div>
+    
+    <div class="card">
+      <h3><i class="fab fa-youtube"></i> Enlace del video (YouTube)</h3>
+      <div class="video-placeholder">
+        <div class="fake-video">
+          <i class="fas fa-play-circle fa-3x" style="color:#2c7da0;"></i>
+          <p style="margin-top: 10px;"><strong>📹 Video Carta - Storytelling</strong><br>
+          🔗 Enlace real pendiente: <a href="#" style="color:#1f5e7a;">[SUBIR A YOUTUBE E INSERTAR AQUÍ EL LINK]</a><br>
+          <small>Ejemplo: https://youtu.be/tu_video_carta</small><br>
+          <em>Requisito: aparecer directamente, incluir imágenes (sin rostros de beneficiarios ni logos institucionales), narrativa estilo cuento, responder preguntas obligatorias + 2 opcionales.</em>
+        </p>
+        </div>
+        <p><i class="fas fa-link"></i> Para este portafolio, inserte el link público de YouTube: <strong style="background:#fff3cf; padding:2px 6px;">https://www.youtube.com/embed/TU_VIDEO_ID</strong> (reemplazar)</p>
+      </div>
+      
+      <h3><i class="fas fa-comment-dots"></i> Contenido narrativo del video (storytelling - respuestas incluidas)</h3>
+      <div class="badge-placeholder">
+        <p><strong>📖 Estructura tipo cuento (placeholder):</strong></p>
+        <p><i class="fas fa-quote-left"></i> “Imagina que han pasado diez años… Hoy me encuentro aquí recordando aquel semestre cuando realicé mis horas de servicio en la Fundación Semillas Comunitarias, junto a un grupo de niños llenos de historias y esperanzas. Aquella experiencia transformó mi forma de entender el mundo.”</p>
+        <p><strong>✅ Preguntas obligatorias (respondidas en el video):</strong><br>
+        <strong>1. Reflexión personal:</strong> “¿Cómo influyeron esas horas de servicio en mis metas de vida? Definitivamente cambiaron mi brújula: antes soñaba con logros individuales, hoy me visualizo generando equipos y proyectos que devuelvan dignidad a comunidades. Pasé de querer ‘éxito profesional’ a anhelar un legado colectivo.”<br>
+        <strong>2. Reflexión profesional:</strong> “Mi preparación profesional se nutrió de humildad y escucha activa. Identifiqué mi fortaleza para conectar con personas diversas, pero también áreas de mejora: debo profundizar en políticas públicas. La experiencia me mostró que técnicamente puedo ser competente, pero la sensibilidad social es el verdadero sello.”</p>
+        <p><strong>⭐ Preguntas opcionales seleccionadas (2 de ellas):</strong><br>
+        ✔ <strong>Opción A:</strong> “¿Cómo era mi visión antes del servicio? Pensaba que el voluntariado era una ayuda asistencial básica. Hoy sé que es un intercambio transformador. Espero que en 10 años siga participando en consejos locales porque sembré esa semilla.”<br>
+        ✔ <strong>Opción B:</strong> “Aprendí sobre la población con la que trabajé (niños y adolescentes): su resiliencia y creatividad asombran. Esto me enseñó que mis acciones profesionales deben proteger sus derechos y promover sus voces, no solo ‘enseñarles’. Me comprometo a que cada proyecto futuro incluya su participación genuina.”</p>
+        <p><em>Nota: En el video real debes narrar de forma fluida, con imágenes de contexto, sin mostrar rostros de beneficiarios. Este es un esquema de guion - ajusta según tu experiencia personal.</em></p>
+      </div>
+      <hr>
+      <p><i class="fas fa-check-circle" style="color:#2c7da0;"></i> El video debe incluir: nombre completo, carrera, semestre, organización y grupo atendido. Además storytelling coherente, no estilo pregunta-respuesta. Ya está planificado arriba.</p>
+    </div>
+  </section>
+  
+  <!-- Recordatorio final de rúbrica -->
+  <div style="background: #eaf4fa; border-radius: 24px; padding: 1rem 1.8rem; margin-top: 1rem;">
+    <p><i class="fas fa-clipboard"></i> <strong>Revisión de rúbrica:</strong> Este portafolio incluye las 5 secciones: (1) producto mejorado + explicación, (2) deber, definiciones y comparación, (3) tres valores con tabla aplicada, (4) dos compromisos con indicadores y acciones concretas (mínimo 4), (5) video carta con storytelling, link YouTube (placeholder) y respuestas a preguntas obligatorias + opcionales. Todos los textos en cursiva/placeholder deben ser reemplazados por tu evidencia real antes de entregar.</p>
+    <p><i class="fas fa-edit"></i> <strong>Sugerencia:</strong> Sustituye los textos entre [ ] o los párrafos de ejemplo por tus reflexiones auténticas, y asegúrate de subir el video a YouTube (configuración “público” o “no listado” para insertar el enlace). El diseño es responsivo y puede alojarse en Genially, Canva o exportarse como HTML.</p>
+  </div>
+
+  <footer>
+    <i class="fas fa-seedling"></i> E-Portafolio integrador | PASEC - servicio comunitario | Ciudadanía responsable en acción
+  </footer>
+</div>
+</body>
+</html>
