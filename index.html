@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>E-Portafolio PASEC | Ciudadanía Responsable</title>
   <!-- Google Fonts & Font Awesome for Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -15,11 +15,12 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: #f4f7fc;
-      color: #1e2a3e;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f8f9fa 0%, #f0f2f5 100%);
+      color: #2c3e50;
       line-height: 1.5;
       padding: 2rem 1rem;
+      min-height: 100vh;
     }
 
     .container {
@@ -27,113 +28,287 @@
       margin: 0 auto;
       background: white;
       border-radius: 32px;
-      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+      box-shadow: 0 25px 50px -12px rgba(30, 41, 59, 0.1), 
+                  0 10px 25px -5px rgba(0,0,0,0.08);
       overflow: hidden;
-      padding: 2rem 2rem 3rem;
+      padding: 2.5rem 2.5rem 3rem;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .container:hover {
+      box-shadow: 0 30px 60px -12px rgba(30, 41, 59, 0.15), 
+                  0 12px 30px -5px rgba(0,0,0,0.1);
     }
 
     /* header */
     .hero {
       text-align: center;
       margin-bottom: 2.5rem;
-      border-bottom: 3px solid #2c7da0;
+      border-bottom: 3px solid #1e293b;
       padding-bottom: 1.5rem;
+      animation: fadeInDown 0.6s ease;
     }
     .hero h1 {
       font-size: 2.3rem;
       font-weight: 700;
-      background: linear-gradient(135deg, #1f6e8c, #0e4e6b);
+      background: linear-gradient(135deg, #1e293b, #334155);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
       letter-spacing: -0.3px;
+      margin-bottom: 0.5rem;
     }
     .hero p {
-      color: #2c3e50;
+      color: #475569;
       margin-top: 0.5rem;
       font-size: 1rem;
-      background: #e9f0f5;
+      background: #f1f5f9;
       display: inline-block;
       padding: 0.3rem 1rem;
       border-radius: 40px;
+    }
+
+    /* student info section */
+    .student-info {
+      background: linear-gradient(135deg, #f8fafc 0%, #eef2f5 100%);
+      border-radius: 24px;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+      border-left: 5px solid #10b981;
+      animation: fadeInUp 0.6s ease 0.2s both;
+    }
+    .student-info h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .info-item {
+      background: white;
+      padding: 1.2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border: 2px solid #e2e8f0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .info-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(30, 41, 59, 0.1);
+      border-color: #cbd5e1;
+    }
+    .info-item label {
+      font-weight: 600;
+      color: #1e293b;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .info-item p {
+      color: #1e2a3e;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    /* animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* secciones */
     section {
       margin-bottom: 3rem;
       scroll-margin-top: 1rem;
+      animation: fadeInUp 0.6s ease backwards;
     }
+    section:nth-child(1) { animation-delay: 0.3s; }
+    section:nth-child(2) { animation-delay: 0.4s; }
+    section:nth-child(3) { animation-delay: 0.5s; }
+    section:nth-child(4) { animation-delay: 0.6s; }
+    section:nth-child(5) { animation-delay: 0.7s; }
+    section:nth-child(6) { animation-delay: 0.8s; }
+
     .section-title {
       font-size: 1.8rem;
       font-weight: 600;
-      border-left: 6px solid #2c7da0;
+      border-left: 6px solid #10b981;
       padding-left: 1rem;
       margin-bottom: 1.5rem;
-      color: #0b3b4f;
+      color: #1e293b;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .section-title:hover {
+      transform: translateX(5px);
+      color: #10b981;
     }
     .card {
       background: #ffffff;
       border-radius: 28px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.05);
-      padding: 1.5rem;
+      padding: 1.8rem;
       margin-bottom: 1.8rem;
-      border: 1px solid #e2edf2;
-      transition: 0.2s;
+      border: 2px solid #e2e8f0;
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      box-shadow: 0 12px 30px rgba(30, 41, 59, 0.1), 0 4px 10px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+      border-color: #cbd5e1;
     }
     .card h3 {
       font-size: 1.4rem;
       font-weight: 600;
-      margin-bottom: 0.75rem;
-      color: #1f5e7a;
+      margin-bottom: 1rem;
+      color: #1e293b;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.7rem;
+      transition: color 0.3s ease;
+    }
+    .card h3:hover {
+      color: #10b981;
     }
     .badge-placeholder {
-      background: #f0f4f9;
-      border-left: 4px solid #61a5c2;
-      padding: 1rem;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      border-left: 4px solid #10b981;
+      padding: 1.2rem;
       border-radius: 18px;
       font-style: normal;
       color: #2c3e50;
+      transition: all 0.3s ease;
+      border: 1px solid #e2e8f0;
+    }
+    .badge-placeholder:hover {
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+      transform: translateY(-2px);
+    }
+    .badge-placeholder p {
+      margin-bottom: 0.8rem;
+    }
+    .badge-placeholder p:last-child {
+      margin-bottom: 0;
+    }
+    .badge-placeholder strong {
+      color: #1e293b;
     }
     .product-image {
-      background: #eef2f5;
+      background: linear-gradient(135deg, #f8fafc 0%, #eef2f5 100%);
       border-radius: 20px;
-      padding: 1.2rem;
+      padding: 1.5rem;
       text-align: center;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
       font-weight: 500;
+      color: #1e293b;
+      border: 2px solid #e2e8f0;
+      transition: all 0.3s ease;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1rem 0;
+    .product-image:hover {
+      background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+      border-color: #10b981;
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.1);
+    }
+    .product-image i {
+      color: #10b981;
+    }
+    .video-placeholder {
+      background: linear-gradient(135deg, #f8fafc 0%, #eef2f5 100%);
+      border-radius: 24px;
+      padding: 1.8rem;
+      text-align: center;
+      border: 2px dashed #cbd5e1;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    .video-placeholder:hover {
+      background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+      border-color: #10b981;
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.1);
+    }
+    .fake-video {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      color: white;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .fake-video:hover {
+      background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    }
+    .fake-video i {
+      color: white;
     }
     th, td {
       border: 1px solid #cbdde6;
-      padding: 0.9rem;
+      padding: 1rem;
       vertical-align: top;
       background-color: white;
+      transition: background-color 0.3s ease;
     }
     th {
-      background: #e5f0f6;
+      background: linear-gradient(135deg, #f8fafc 0%, #eef2f5 100%);
       font-weight: 600;
-      color: #1a5a77;
+      color: #1e293b;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+    }
+    tr:hover td {
+      background-color: #f8fafc;
     }
     .table-responsive {
       overflow-x: auto;
     }
     .commitment-actions ul {
-      margin-left: 1.2rem;
+      margin-left: 1.5rem;
       padding-left: 0;
+      list-style: none;
     }
     .commitment-actions li {
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.6rem;
+      padding-left: 1.5rem;
+      position: relative;
+      line-height: 1.6;
+      color: #2c3e50;
+    }
+    .commitment-actions li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: bold;
+      font-size: 1.2rem;
     }
     .video-placeholder {
       background: #eef2fa;
@@ -152,36 +327,71 @@
     }
     .info-tag {
       display: inline-block;
-      background: #2c7da0;
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
       color: white;
-      padding: 0.2rem 0.8rem;
+      padding: 0.35rem 0.95rem;
       border-radius: 30px;
       font-size: 0.8rem;
-      margin-right: 0.5rem;
+      margin-right: 0.6rem;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      box-shadow: 0 4px 10px rgba(30, 41, 59, 0.2);
+      transition: all 0.3s ease;
+    }
+    .info-tag:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(16, 185, 129, 0.3);
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
     }
     hr {
-      margin: 1rem 0;
-      border-color: #d4e2ea;
+      margin: 1.5rem 0;
+      border: none;
+      border-top: 2px solid #e2e8f0;
+      opacity: 0.7;
     }
     .placeholder-text {
       color: #2c3e50;
-      background: #fbfefc;
+      background: linear-gradient(135deg, #fbfefc 0%, #f5fafb 100%);
+      padding: 0.5rem 0;
+      border-radius: 8px;
+    }
+    .placeholder-text p {
+      margin-bottom: 0.8rem;
+      line-height: 1.6;
+    }
+    .placeholder-text p:last-child {
+      margin-bottom: 0;
     }
     i, .icon-em {
-      color: #2c7da0;
+      color: #10b981;
       margin-right: 6px;
     }
     footer {
       text-align: center;
-      margin-top: 2rem;
-      color: #6c8b9e;
-      font-size: 0.85rem;
-      border-top: 1px solid #dce7ef;
-      padding-top: 1.5rem;
+      margin-top: 3rem;
+      color: #64748b;
+      font-size: 0.9rem;
+      border-top: 2px solid #e2e8f0;
+      padding-top: 2rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+    footer i {
+      color: #10b981;
+      margin-right: 0.5rem;
     }
     @media (max-width: 700px) {
       .container {
         padding: 1.5rem;
+      }
+      .student-info {
+        padding: 1.5rem;
+      }
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
       }
       th, td {
         padding: 0.6rem;
@@ -200,7 +410,36 @@
     <p>Reflexión integrada | Servicio comunitario y PASEC</p>
   </div>
 
-  <!-- ================= SECCIÓN 1: PRODUCTO MEJORADO ================= -->
+  <!-- ================= SECCIÓN 0: INFORMACIÓN DEL ESTUDIANTE ================= -->
+  <div class="student-info">
+    <h2><i class="fas fa-user-circle"></i> Información del Estudiante</h2>
+    <div class="info-grid">
+      <div class="info-item">
+        <label><i class="fas fa-user"></i> Nombre</label>
+        <p>Nicolás Tovar</p>
+      </div>
+      <div class="info-item">
+        <label><i class="fas fa-id-card"></i> Banner</label>
+        <p>00332988</p>
+      </div>
+      <div class="info-item">
+        <label><i class="fas fa-book"></i> Carrera</label>
+        <p>Ciencias de la Computación</p>
+      </div>
+      <div class="info-item">
+        <label><i class="fas fa-calendar-alt"></i> Periodo</label>
+        <p>Segundo semestre 2025/2026</p>
+      </div>
+      <div class="info-item">
+        <label><i class="fas fa-heart-hands"></i> Organización</label>
+        <p>Protección Animal Ecuador</p>
+      </div>
+      <div class="info-item">
+        <label><i class="fas fa-users"></i> Grupo Atendido</label>
+        <p>Animales en situación de abandono</p>
+      </div>
+    </div>
+  </div>
   <section>
     <div class="section-title"><i class="fas fa-star"></i> 1. Producto mejorado & aprendizaje clave</div>
     <div class="card">
@@ -210,7 +449,7 @@
         <span>📘 Documento reflexivo + infografía de roles ciudadanos</span>
       </div>
       <div class="badge-placeholder">
-        <p><strong>🔍 Explicación (aprox. 330 palabras):</strong></p>
+        <p><strong>🔍 Explicación:</strong></p>
         <p>¿Qué aprendí? A través de la mejora de este producto (un análisis de casos sobre dilemas éticos en el servicio comunitario), comprendí que la ciudadanía responsable trasciende la simple participación: implica una escucha activa, empatía estructural y acciones sostenibles. Aprendí a vincular conceptos de PASEC como "bien común" y "justicia social" con situaciones reales detectadas durante mis horas de voluntariado.</p>
         <p>¿Por qué fue relevante? Porque inicialmente concebía el servicio como una ayuda puntual; sin embargo, al profundizar en el producto, descubrí que la transformación social requiere planificación colectiva y corresponsabilidad. Entendí que mi rol como ciudadano incluye identificar necesidades genuinas de la comunidad y no imponer soluciones externas. Este aprendizaje me hizo valorar el diálogo horizontal con organizaciones de base.</p>
         <p>Impacto personal: Rompió mi creencia previa de que "los jóvenes no influyen en problemas estructurales". Ahora reconozco que pequeñas acciones sostenidas generan cambios. Profesionalmente, como futuro [tu profesión], revisé mi deber ético: no se trata solo de eficiencia técnica, sino de construir confianza y equidad. Este producto mejorado simboliza mi evolución de una mirada asistencialista a una mirada de agencia ciudadana.</p>
@@ -224,7 +463,12 @@
     <div class="section-title"><i class="fas fa-hand-sparkles"></i> 2. Reflexión sobre ciudadanía responsable</div>
     <div class="card">
       <h3><i class="fas fa-gavel"></i> Mi deber sobre ciudadanía responsable</h3>
-      <p>Considero que mi deber como ciudadano responsable es involucrarme activamente en los espacios comunitarios, informarme críticamente, respetar los derechos humanos y contribuir a la solución de problemas colectivos, priorizando el bienestar sobre intereses individuales. Además, implica exigir cuentas a las instituciones y asumir compromisos sostenibles con mi entorno.</p>
+      <iframe 
+        src="document.pdf" 
+        width="100%" 
+        height="600px"
+        style="border: 1px solid #d4e2ea; border-radius: 16px;">
+      </iframe>
     </div>
     <div class="card">
       <h3><i class="fas fa-pen-fancy"></i> Primera definición (original - extraída de mi deber inicial)</h3>
@@ -235,7 +479,7 @@
       <p>"Ciudadanía responsable es un ejercicio activo, crítico y corresponsable mediante el cual las personas participan en la construcción de tejido social, reconocen la interdependencia con diversos grupos (niños, ancianos, medio ambiente, etc.) y transforman realidades desde la empatía ética, comprometiéndose no solo en acciones puntuales sino en procesos sostenidos de incidencia colectiva y cuidado mutuo."</p>
     </div>
     <div class="card">
-      <h3><i class="fas fa-code-branch"></i> Comparación (primer definición vs. segunda) ~ 340 palabras</h3>
+      <h3><i class="fas fa-code-branch"></i> Comparación (primer definición vs. segunda)</h3>
       <div class="placeholder-text">
         <p>La comparación evidencia cambios sustanciales. En mi primera definición, la ciudadanía responsable se limitaba al cumplimiento de deberes formales (votar, leyes) y una ayuda ocasional, con un enfoque casi individual. Mi segunda definición, en cambio, integra la corresponsabilidad, la transformación estructural y la participación continua. ¿Qué cambió? Principalmente la noción de «interdependencia» y «procesos». Antes entendía el servicio como una actividad extracurricular; ahora lo veo como un eje ético de mi vida profesional y personal. Este giro ocurrió gracias a las horas de servicio con [organización placeholder] al interactuar con adultos mayores, lo que me mostró que la vulnerabilidad no es una carencia aislada, sino resultado de desigualdades sistémicas.</p>
         <p>También cambió la dimensión política: ya no concibo la ciudadanía como una actitud pasiva, sino como agencia transformadora. Lo que se mantuvo es el valor del respeto y la legalidad, pero ahora enriquecido con justicia social. Se mantuvo la convicción de que toda persona debe aportar, pero la escala se amplió: de lo individual a lo colectivo. El porqué del cambio radica en las experiencias directas durante el servicio: escuchar historias de exclusión, ver cómo pequeñas acciones organizadas generan redes de apoyo, y las clases de PASEC donde discutimos dilemas éticos. Así, mi definición evolucionó de una visión funcionalista a una relacional y comprometida con la equidad.</p>
@@ -315,52 +559,37 @@
   <!-- ================= SECCIÓN 5: VIDEO CARTA (storytelling + youtube) ================= -->
   <section>
     <div class="section-title"><i class="fas fa-video"></i> 5. Video carta: mí mismo dentro de 10 años</div>
-    <div class="card">
-      <h3><i class="fas fa-user-astronaut"></i> Datos de identificación</h3>
-      <p><span class="info-tag">Nombre completo</span> [María José López Ramírez] (placeholder)</p>
-      <p><span class="info-tag">Carrera</span> [Psicología / Administración / Ingeniería - escribir tu carrera] <span class="info-tag">Semestre</span> [4to semestre]</p>
-      <p><span class="info-tag">Organización</span> Fundación Semillas Comunitarias <span class="info-tag">Grupo/entidad</span> Niños y adolescentes en situación de vulnerabilidad</p>
-    </div>
     
     <div class="card">
       <h3><i class="fab fa-youtube"></i> Enlace del video (YouTube)</h3>
       <div class="video-placeholder">
-        <div class="fake-video">
-          <i class="fas fa-play-circle fa-3x" style="color:#2c7da0;"></i>
-          <p style="margin-top: 10px;"><strong>📹 Video Carta - Storytelling</strong><br>
-          🔗 Enlace real pendiente: <a href="#" style="color:#1f5e7a;">[SUBIR A YOUTUBE E INSERTAR AQUÍ EL LINK]</a><br>
-          <small>Ejemplo: https://youtu.be/tu_video_carta</small><br>
-          <em>Requisito: aparecer directamente, incluir imágenes (sin rostros de beneficiarios ni logos institucionales), narrativa estilo cuento, responder preguntas obligatorias + 2 opcionales.</em>
-        </p>
-        </div>
-        <p><i class="fas fa-link"></i> Para este portafolio, inserte el link público de YouTube: <strong style="background:#fff3cf; padding:2px 6px;">https://www.youtube.com/embed/TU_VIDEO_ID</strong> (reemplazar)</p>
+        <iframe 
+          width="100%" 
+          height="480" 
+          src="https://www.youtube-no-cookie.com/embed/PDJLvF1dUek?modestbranding=1"
+          title="Video Carta"
+          referrerPolicy="strict-origin-when-cross-origin" 
+          frameborder="0" 
+          allow="encrypted-media"
+          allowfullscreen
+          style="border-radius: 16px;">
+        </iframe>
       </div>
       
       <h3><i class="fas fa-comment-dots"></i> Contenido narrativo del video (storytelling - respuestas incluidas)</h3>
       <div class="badge-placeholder">
-        <p><strong>📖 Estructura tipo cuento (placeholder):</strong></p>
-        <p><i class="fas fa-quote-left"></i> “Imagina que han pasado diez años… Hoy me encuentro aquí recordando aquel semestre cuando realicé mis horas de servicio en la Fundación Semillas Comunitarias, junto a un grupo de niños llenos de historias y esperanzas. Aquella experiencia transformó mi forma de entender el mundo.”</p>
         <p><strong>✅ Preguntas obligatorias (respondidas en el video):</strong><br>
         <strong>1. Reflexión personal:</strong> “¿Cómo influyeron esas horas de servicio en mis metas de vida? Definitivamente cambiaron mi brújula: antes soñaba con logros individuales, hoy me visualizo generando equipos y proyectos que devuelvan dignidad a comunidades. Pasé de querer ‘éxito profesional’ a anhelar un legado colectivo.”<br>
         <strong>2. Reflexión profesional:</strong> “Mi preparación profesional se nutrió de humildad y escucha activa. Identifiqué mi fortaleza para conectar con personas diversas, pero también áreas de mejora: debo profundizar en políticas públicas. La experiencia me mostró que técnicamente puedo ser competente, pero la sensibilidad social es el verdadero sello.”</p>
         <p><strong>⭐ Preguntas opcionales seleccionadas (2 de ellas):</strong><br>
         ✔ <strong>Opción A:</strong> “¿Cómo era mi visión antes del servicio? Pensaba que el voluntariado era una ayuda asistencial básica. Hoy sé que es un intercambio transformador. Espero que en 10 años siga participando en consejos locales porque sembré esa semilla.”<br>
         ✔ <strong>Opción B:</strong> “Aprendí sobre la población con la que trabajé (niños y adolescentes): su resiliencia y creatividad asombran. Esto me enseñó que mis acciones profesionales deben proteger sus derechos y promover sus voces, no solo ‘enseñarles’. Me comprometo a que cada proyecto futuro incluya su participación genuina.”</p>
-        <p><em>Nota: En el video real debes narrar de forma fluida, con imágenes de contexto, sin mostrar rostros de beneficiarios. Este es un esquema de guion - ajusta según tu experiencia personal.</em></p>
       </div>
-      <hr>
-      <p><i class="fas fa-check-circle" style="color:#2c7da0;"></i> El video debe incluir: nombre completo, carrera, semestre, organización y grupo atendido. Además storytelling coherente, no estilo pregunta-respuesta. Ya está planificado arriba.</p>
     </div>
   </section>
   
-  <!-- Recordatorio final de rúbrica -->
-  <div style="background: #eaf4fa; border-radius: 24px; padding: 1rem 1.8rem; margin-top: 1rem;">
-    <p><i class="fas fa-clipboard"></i> <strong>Revisión de rúbrica:</strong> Este portafolio incluye las 5 secciones: (1) producto mejorado + explicación, (2) deber, definiciones y comparación, (3) tres valores con tabla aplicada, (4) dos compromisos con indicadores y acciones concretas (mínimo 4), (5) video carta con storytelling, link YouTube (placeholder) y respuestas a preguntas obligatorias + opcionales. Todos los textos en cursiva/placeholder deben ser reemplazados por tu evidencia real antes de entregar.</p>
-    <p><i class="fas fa-edit"></i> <strong>Sugerencia:</strong> Sustituye los textos entre [ ] o los párrafos de ejemplo por tus reflexiones auténticas, y asegúrate de subir el video a YouTube (configuración “público” o “no listado” para insertar el enlace). El diseño es responsivo y puede alojarse en Genially, Canva o exportarse como HTML.</p>
-  </div>
-
   <footer>
-    <i class="fas fa-seedling"></i> E-Portafolio integrador | PASEC - servicio comunitario | Ciudadanía responsable en acción
+    <i class="fas fa-sprout"></i> <strong>E-Portafolio integrador</strong> | PASEC - servicio comunitario | Ciudadanía responsable en acción
   </footer>
 </div>
 </body>
